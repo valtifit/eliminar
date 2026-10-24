@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Promos de Halloween</title>
+<meta name="theme-color" content="#12051f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- ================= PIXEL DE META (FACEBOOK) =================
+  OPCIÓN 1 (recomendada, sin tocar código): abre la página con #admin al final,
+  entra a ⚙ > Pixel y pega solo tu ID numérico.
+
+  OPCIÓN 2: pega aquí abajo, reemplazando la línea de PEGA_TU_PIXEL_AQUI,
+  el código completo que te da Meta (Administrador de eventos > Instalar código manualmente).
+
+  Usa UNA sola opción para no duplicar eventos.
+  Eventos que envía la página: PageView, InitiateCheckout (al abrir el formulario),
+  Lead (al enviar el pedido) y Contact (botón flotante de WhatsApp).
+-->
+<!-- PEGA_TU_PIXEL_AQUI -->
+<!-- ================= FIN PIXEL ================= -->
+
+<style>
+:root{--bg:#12051f;--bg2:#2b0b4d;--card:#1d0a30;--text:#f4ecff;--accent:#7dff3a;--accentText:#12051f;--price:#ffb020;--badge:#ff6a00;--hf:'Bangers',Impact,sans-serif;--bf:'Poppins',system-ui,sans-serif;--hw:400;--r:18px;--bgfull:#12051f;
+--line:color-mix(in srgb,var(--text) 14%,transparent);--soft:color-mix(in srgb,var(--text) 7%,transparent)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--bf);color:var(--text);background:var(--bgfull);min-height:100vh;line-height:1.45;-webkit-text-size-adjust:100%}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+background:radial-gradient(60% 40% at 12% 0%,color-mix(in srgb,var(--accent) 16%,transparent),transparent 70%),radial-gradient(60% 40% at 95% 35%,color-mix(in srgb,var(--badge) 16%,transparent),transparent 70%)}
+body.lock{overflow:hidden}
+.app{position:relative;z-index:1;max-width:520px;margin:0 auto;padding:0 14px calc(96px + env(safe-area-inset-bottom))}
+h1,h2,h3,.price,.btn,.brand,.badge{font-family:var(--hf);font-weight:var(--hw)}
+.top{display:flex;justify-content:center;align-items:center;padding:14px 0 2px}
+.top:empty{display:none}
+.top img{max-height:46px;width:auto;display:block}
+.brand{font-size:1.7rem;letter-spacing:.04em;color:var(--accent)}
+.hero h1{font-size:2.4rem;line-height:1.05;text-align:center;margin:10px 0 6px;letter-spacing:.02em;text-shadow:0 3px 0 rgba(0,0,0,.35)}
+.hero p{text-align:center;opacity:.85;margin:0 0 14px}
+.slider{position:relative;border-radius:var(--r);overflow:hidden;transition:height .3s;box-shadow:0 10px 30px rgba(0,0,0,.35);border:1px solid var(--line)}
+.track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;align-items:flex-start;-webkit-overflow-scrolling:touch}
+.track::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;scroll-snap-align:center}
+.slide img{display:block;width:100%;height:auto}
+.dots{position:absolute;left:0;right:0;bottom:8px;display:flex;justify-content:center;gap:6px;pointer-events:none}
+.dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.45);box-shadow:0 0 0 1px rgba(0,0,0,.3)}
+.dot.on{background:var(--accent);width:20px;border-radius:6px}
+.cta{text-align:center;margin:16px 0 4px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border:0;cursor:pointer;background:var(--accent);color:var(--accentText);font-size:1.35rem;letter-spacing:.04em;padding:.7rem 1.5rem;border-radius:999px;text-decoration:none;box-shadow:0 6px 0 rgba(0,0,0,.35);transition:transform .08s,box-shadow .08s;line-height:1.1}
+.btn:active{transform:translateY(3px);box-shadow:0 3px 0 rgba(0,0,0,.35)}
+.btn.block{width:100%}
+.sec{font-size:2rem;text-align:center;margin:26px 0 14px;letter-spacing:.03em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-bottom:20px;box-shadow:0 10px 26px rgba(0,0,0,.28)}
+.imgw{position:relative;background:#000}
+.imgw img{display:block;width:100%;height:auto}
+.badge{position:absolute;top:10px;left:10px;background:var(--badge);color:#fff;font-size:1.05rem;letter-spacing:.04em;padding:.2rem .75rem;border-radius:999px;box-shadow:0 3px 8px rgba(0,0,0,.4)}
+.cbody{padding:14px 14px 16px}
+.card h3{font-size:1.6rem;margin:0 0 4px;letter-spacing:.02em;line-height:1.1}
+.desc{margin:0 0 10px;opacity:.85;font-size:.95rem}
+.inc{list-style:none;padding:0;margin:0 0 12px}
+.inc li{position:relative;padding-left:1.5rem;font-size:.92rem;margin:4px 0}
+.inc li::before{content:"✔";position:absolute;left:0;color:var(--accent);font-weight:700}
+.pbox{margin:8px 0 12px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.old{text-decoration:line-through;opacity:.6;font-size:1rem}
+.price{font-size:2.5rem;line-height:1;color:var(--price);letter-spacing:.02em}
+.save{background:color-mix(in srgb,var(--accent) 22%,transparent);color:var(--accent);border-radius:999px;font-size:.78rem;font-weight:700;padding:.15rem .6rem}
+footer{text-align:center;margin-top:30px;font-size:.85rem}
+footer .ft{opacity:.9;margin:0 0 8px}
+footer .lg{opacity:.55;font-size:.75rem;margin:0}
+.wa{position:fixed;right:14px;bottom:calc(16px + env(safe-area-inset-bottom));width:58px;height:58px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;font-size:28px;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.45);z-index:40}
+/* formulario */
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.72);display:none;align-items:flex-end;justify-content:center;z-index:60}
+.ov.open{display:flex}
+.sheet{position:relative;background:var(--card);color:var(--text);width:100%;max-width:520px;max-height:93vh;overflow:auto;border-radius:22px 22px 0 0;padding:20px 16px calc(22px + env(safe-area-inset-bottom));animation:up .25s ease;border:1px solid var(--line)}
+@keyframes up{from{transform:translateY(40px);opacity:0}}
+@media(min-width:600px){.ov{align-items:center}.sheet{border-radius:22px}}
+.x{position:absolute;top:10px;right:12px;width:36px;height:36px;border-radius:50%;border:0;background:var(--soft);color:var(--text);font-size:18px;cursor:pointer}
+.sheet h2{font-size:1.8rem;margin:0 36px 2px 0;line-height:1.1}
+.sheet .intro{margin:0 0 12px;opacity:.8;font-size:.9rem}
+.sum{display:flex;gap:12px;align-items:center;background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:8px;margin-bottom:12px}
+.sum img{width:64px;height:64px;object-fit:cover;border-radius:10px;flex:none}
+.sum b{display:block;line-height:1.2}
+.sum span{color:var(--price);font-weight:700}
+.qty{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:10px}
+.qty .st{display:flex;align-items:center;gap:10px}
+.qty button{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--soft);color:var(--text);font-size:20px;cursor:pointer}
+.qty output{min-width:24px;text-align:center;font-weight:700}
+.tot{font-family:var(--hf);font-weight:var(--hw);font-size:1.6rem;color:var(--price)}
+.fl{display:block;margin-bottom:10px}
+.fl>span{display:block;font-size:.82rem;opacity:.85;margin-bottom:4px}
+.fl input,.fl textarea{width:100%;padding:.8rem .9rem;border-radius:12px;border:1px solid var(--line);background:var(--soft);color:var(--text);font:inherit;font-size:16px}
+.fl input:focus,.fl textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
+.fl .er{color:#ff7b7b;font-size:.78rem;min-height:1em}
+.fb{font-size:.8rem;opacity:.75;text-align:center;margin:10px 0 0}
+.fb a{color:var(--accent)}
+/* ===== editor ===== */
+.gear{position:fixed;left:12px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:90;border:0;border-radius:999px;background:#111;color:#fff;font:600 14px system-ui;padding:12px 16px;box-shadow:0 6px 18px rgba(0,0,0,.5);cursor:pointer}
+.adm{position:fixed;top:0;right:0;bottom:0;width:100%;max-width:430px;background:#fff;color:#1b1b1f;z-index:100;transform:translateX(105%);transition:transform .25s;display:flex;flex-direction:column;font:14px/1.4 system-ui,sans-serif;box-shadow:-8px 0 30px rgba(0,0,0,.4)}
+.adm.open{transform:none}
+.adm *{box-sizing:border-box}
+.adm .hd{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;background:#111;color:#fff}
+.adm .hd b{font-size:15px}
+.adm .hd button{background:#7dff3a;color:#111;border:0;border-radius:8px;padding:8px 12px;font-weight:700;cursor:pointer}
+.adm .tabs{display:flex;overflow-x:auto;background:#f0eef5;border-bottom:1px solid #ddd;scrollbar-width:none}
+.adm .tabs button{flex:none;border:0;background:none;padding:11px 13px;font:600 13px system-ui;color:#555;cursor:pointer;border-bottom:3px solid transparent}
+.adm .tabs button.on{color:#111;border-color:#7b2cff}
+.adm .bd{flex:1;overflow:auto;padding:12px 14px 30px}
+.adm .st{padding:6px 12px;font-size:12px;background:#f7f7f9;border-top:1px solid #eee;color:#555}
+.adm .st.bad{color:#b00020;background:#fff0f0}
+.adm h4{margin:18px 0 8px;font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:#7b2cff}
+.adm .f{display:block;margin-bottom:10px}
+.adm .f>span{display:block;font-weight:600;margin-bottom:3px;font-size:13px}
+.adm .f small{display:block;color:#777;margin-top:2px;font-size:12px}
+.adm input[type=text],.adm input[type=tel],.adm input[type=number],.adm textarea,.adm select{width:100%;padding:9px 10px;border:1px solid #ccc;border-radius:8px;font:inherit;font-size:15px;background:#fff;color:#111}
+.adm textarea{resize:vertical}
+.adm .c{display:flex;align-items:center;gap:8px;margin:8px 0;cursor:pointer}
+.adm .c input{width:20px;height:20px}
+.adm .col{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.adm .col input{width:46px;height:36px;padding:0;border:1px solid #ccc;border-radius:8px;background:none}
+.adm .col span{flex:1;font-weight:600;font-size:13px}
+.adm .col code{font-size:12px;color:#666}
+.adm .imgf{border:1px dashed #bbb;border-radius:10px;padding:8px;margin-bottom:10px}
+.adm .imgf img{display:block;max-width:100%;max-height:120px;border-radius:6px;margin-bottom:6px;background:#eee}
+.adm .imgf input[type=file]{width:100%;margin:4px 0;font-size:13px}
+.adm .imgf small{display:block;color:#666;font-size:12px}
+.adm .btnx{border:1px solid #ccc;background:#fff;border-radius:8px;padding:8px 11px;font:600 13px system-ui;cursor:pointer;margin:2px 4px 2px 0;color:#111}
+.adm .btnx.pri{background:#7b2cff;border-color:#7b2cff;color:#fff}
+.adm .btnx.dan{color:#b00020;border-color:#e3b3ba}
+.adm details{border:1px solid #ddd;border-radius:10px;margin-bottom:10px;background:#fafafa}
+.adm summary{padding:10px 12px;font-weight:600;cursor:pointer}
+.adm details>div{padding:4px 12px 12px}
+.adm .warn{background:#fff3cd;border:1px solid #ffe08a;color:#6b4e00;padding:9px 11px;border-radius:8px;margin-bottom:12px}
+.adm .note{background:#f2eefc;border-radius:8px;padding:10px 12px;margin:8px 0;font-size:13px}
+.adm .note ol{margin:4px 0 0 18px;padding:0}
+@media(min-width:700px){.app{box-shadow:none}}
+</style>
+</head>
+<body>
+<div class="app" id="app">
+  <div class="top" id="top"></div>
+  <section class="hero" id="hero"></section>
+  <h2 class="sec" id="promos"></h2>
+  <div id="list"></div>
+  <footer id="foot"></footer>
+</div>
+
+<a class="wa" id="waF" href="#" aria-label="Escribir por WhatsApp" rel="noopener">💬</a>
+
+<div class="ov" id="ov" role="dialog" aria-modal="true" aria-labelledby="ovT">
+  <div class="sheet"><button class="x" id="ovX" aria-label="Cerrar">✕</button><div id="ovB"></div></div>
+</div>
+
+<div id="admRoot"></div>
+
+<script>
+(()=>{
+'use strict';
+/* =====================  CONFIGURACIÓN POR DEFECTO  =====================
+   Todo esto se puede cambiar desde el editor (abre la página con #admin). */
+const KEY='halloween_landing_cfg_v1';
+const DEFAULTS={
+  whatsapp:'573000000000',
+  pageTitle:'Promos de Halloween',
+  brand:{name:'',logo:{src:'',w:0,h:0}},
+  hero:{
+    title:'🎃 Combos de Halloween',
+    subtitle:'Elige tu combo y pídelo directo por WhatsApp',
+    button:'Ver promos',
+    autoplay:true,
+    slides:[{src:'img/hero-1.webp',w:900,h:900},{src:'img/hero-2.webp',w:900,h:1350}]
+  },
+  sectionTitle:'Elige tu combo',
+  ui:{cardBtn:'¡Lo quiero! 🎃'},
+  products:[
+    {id:'escuadron',visible:true,title:'Escuadrón Bye Bye',badge:'Combo trío',
+     desc:'Quemador + Drenador + Fibra, en un solo combo de Halloween.',
+     includes:'Quemador Bye Bye Grasa (30 cápsulas)\nDrenador Bye Bye Grasa (30 mL)\nFibra natural MW 400 g — GRATIS',
+     price:164000,oldPrice:0,image:{src:'img/promo-1.webp',w:900,h:1117}},
+    {id:'kema',visible:true,title:'Trío Ke-Ma + Fibra gratis',badge:'Fibra gratis',
+     desc:'El regalo de MW: llévate la fibra sin costo con tu quemador y tu drenador.',
+     includes:'Ke-Ma Burner (30 cápsulas)\nKe-Ma Drainer (30 mL)\nFibra natural MW 400 g — GRATIS',
+     price:164000,oldPrice:0,image:{src:'img/promo-2.webp',w:896,h:1174}},
+    {id:'mw3',visible:true,title:'3 MW Clásicos + 2 Fibras + obsequio',badge:'Pack grande',
+     desc:'Solo pagas 3 MW Clásicos y te llevas 2 fibras más un obsequio.',
+     includes:'3 MW Fórmula Clásica\n2 MW Fibra\nObsequio incluido',
+     price:327000,oldPrice:500000,image:{src:'img/promo-3.webp',w:900,h:1117}},
+    {id:'mw147',visible:true,title:'Quemador + Drenador + obsequio',badge:'Envío gratis',
+     desc:'Solo pagas 1 quemador y 1 drenador, y te enviamos obsequio. El envío va por nuestra cuenta.',
+     includes:'1 Quemador MW Clásico (30 cápsulas)\n1 Drenador MW en gotas (30 mL)\nObsequio MW Fibra\nEnvío gratis',
+     price:147900,oldPrice:227000,image:{src:'img/promo-4.webp',w:900,h:1126}},
+    {id:'mw157',visible:true,title:'Quemador + Drenador + Fibra + otro Drenador',badge:'2 regalos',
+     desc:'Solo pagas 1 quemador y 1 drenador; te enviamos de obsequio la fibra y otro drenador.',
+     includes:'1 Quemador MW Clásico (30 cápsulas)\n1 Drenador MW\nFibra MW — GRATIS\nOtro Drenador MW — GRATIS',
+     price:157900,oldPrice:227000,image:{src:'img/promo-5.webp',w:900,h:1117}},
+    {id:'super',visible:true,title:'Súper oferta de Halloween',badge:'Súper oferta',
+     desc:'Fibra, drenador y Fórmula Avanzada Gold en un solo combo.',
+     includes:'MW Fibra 400 g\nMW Drainer en gotas (30 mL)\nFórmula Avanzada MW Gold',
+     price:177900,oldPrice:230000,image:{src:'img/promo-6.webp',w:896,h:1195}}
+  ],
+  form:{
+    title:'Completa tus datos',
+    intro:'Al enviar se abrirá WhatsApp con tu pedido para confirmarlo.',
+    submit:'Enviar pedido por WhatsApp',
+    greeting:'¡Hola! Quiero hacer este pedido:',
+    floatMsg:'Hola, quiero información de las promos de Halloween 🎃',
+    qty:true,
+    fields:{phone:true,city:true,address:true,notes:true}
+  },
+  footer:{
+    text:'🎃 Promociones por tiempo limitado, sujetas a disponibilidad.',
+    legal:'Las imágenes son de referencia. Consulta a tu médico antes de consumir. Los productos no reemplazan una alimentación balanceada ni un tratamiento médico.'
+  },
+  design:{bg:'#12051f',bg2:'#2b0b4d',gradient:true,card:'#1d0a30',text:'#f4ecff',accent:'#7dff3a',accentText:'#12051f',price:'#ffb020',badge:'#ff6a00',
+    headingFont:'Bangers',bodyFont:'Poppins',baseSize:16,radius:18},
+  tracking:{pixelId:'',headCode:''}
+};
+const PRESETS={
+  'Halloween morado':{bg:'#12051f',bg2:'#2b0b4d',gradient:true,card:'#1d0a30',text:'#f4ecff',accent:'#7dff3a',accentText:'#12051f',price:'#ffb020',badge:'#ff6a00'},
+  'Calabaza naranja':{bg:'#1a0a00',bg2:'#4a1d00',gradient:true,card:'#2a1304',text:'#fff3e6',accent:'#ff8a1f',accentText:'#1a0a00',price:'#ffe14d',badge:'#7a2cff'},
+  'Claro limpio':{bg:'#f6f3fb',bg2:'#ffffff',gradient:false,card:'#ffffff',text:'#1f1030',accent:'#6b21ff',accentText:'#ffffff',price:'#d9480f',badge:'#e11d48'}
+};
+const FONTS={
+  heading:['Bangers','Creepster','Lilita One','Chewy','Oswald','Montserrat','Poppins'],
+  body:['Poppins','Montserrat','Nunito','Inter','Roboto','Open Sans']
+};
+const FQ={'Bangers':'Bangers','Creepster':'Creepster','Lilita One':'Lilita+One','Chewy':'Chewy','Oswald':'Oswald:wght@500;700',
+ 'Montserrat':'Montserrat:wght@400;600;700;800','Poppins':'Poppins:wght@400;600;700','Nunito':'Nunito:wght@400;600;800',
+ 'Inter':'Inter:wght@400;600;700','Roboto':'Roboto:wght@400;500;700','Open Sans':'Open+Sans:wght@400;600;700'};
+const BOLD_HEADINGS=['Oswald','Montserrat','Poppins'];
+
+/* =====================  UTILIDADES  ===================== */
+const $=s=>document.querySelector(s);
+const clone=o=>JSON.parse(JSON.stringify(o));
+const getP=(o,p)=>p.split('.').reduce((a,k)=>a==null?a:a[k],o);
+const setP=(o,p,v)=>{const ks=p.split('.');const l=ks.pop();ks.reduce((a,k)=>a[k],o)[l]=v};
+const fmt=n=>new Intl.NumberFormat('es-CO',{style:'currency',currency:'COP',maximumFractionDigits:0}).format(+n||0);
+const kb=b=>Math.round(b/1024)+' KB';
+function h(tag,attrs,...kids){
+  const e=document.createElement(tag);
+  for(const[k,v]of Object.entries(attrs||{})){
+    if(k==='class')e.className=v;
+    else if(v===true)e.setAttribute(k,'');
+    else if(v!==false&&v!=null)e.setAttribute(k,v);
+  }
+  kids.flat().forEach(c=>{if(c==null||c===false)return;e.append(c.nodeType?c:document.createTextNode(String(c)))});
+  return e;
+}
+function merge(base,over){
+  if(Array.isArray(base))return Array.isArray(over)?over:base;
+  if(base&&typeof base==='object'){
+    const o={...base};
+    if(over&&typeof over==='object')for(const k in over)o[k]=(k in base)?merge(base[k],over[k]):over[k];
+    return o;
+  }
+  return over===undefined?base:over;
+}
+async function compress(file,maxW=900,q=.78){
+  const url=URL.createObjectURL(file);
+  const img=await new Promise((ok,no)=>{const i=new Image();i.onload=()=>ok(i);i.onerror=no;i.src=url});
+  const s=Math.min(1,maxW/img.naturalWidth);
+  const w=Math.round(img.naturalWidth*s),hh=Math.round(img.naturalHeight*s);
+  const c=document.createElement('canvas');c.width=w;c.height=hh;
+  c.getContext('2d').drawImage(img,0,0,w,hh);
+  URL.revokeObjectURL(url);
+  let d=c.toDataURL('image/webp',q);
+  if(!d.startsWith('data:image/webp'))d=c.toDataURL('image/jpeg',q);
+  return{dataUrl:d,w,h:hh,bytes:Math.round((d.length-d.indexOf(',')-1)*.75)};
+}
+
+/* =====================  ESTADO  ===================== */
+let cfg=clone(DEFAULTS);
+let ADMIN=false;
+let S=null; // pedido en curso
+const wantAdmin=/(^|[#?&])admin\b/.test(location.hash+location.search);
+try{ if(wantAdmin)sessionStorage.setItem('lp_adm','1'); ADMIN=sessionStorage.getItem('lp_adm')==='1'; }catch(e){ADMIN=wantAdmin}
+
+async function loadConfig(){
+  try{const r=await fetch('config.json?t='+Date.now(),{cache:'no-store'});if(r.ok)cfg=merge(cfg,await r.json())}catch(e){}
+  if(ADMIN){try{const s=localStorage.getItem(KEY);if(s&&localStorage.getItem(KEY+'_dirty')==='1')cfg=merge(cfg,JSON.parse(s))}catch(e){}}
+}
+
+/* =====================  TRACKING (META PIXEL)  ===================== */
+function track(name,params){try{if(!ADMIN&&window.fbq)window.fbq('track',name,params||{})}catch(e){}}
+function injectHTML(code){
+  const box=document.createElement('div');box.innerHTML=code;
+  box.querySelectorAll('script').forEach(old=>{
+    const s=document.createElement('script');
+    [...old.attributes].forEach(a=>s.setAttribute(a.name,a.value));
+    s.text=old.textContent;document.head.appendChild(s);old.remove();
+  });
+  [...box.childNodes].forEach(n=>document.body.appendChild(n));
+}
+function initTracking(){
+  if(ADMIN)return;
+  const t=cfg.tracking||{};
+  const id=String(t.pixelId||'').trim();
+  if(/^\d{8,20}$/.test(id)&&!window.fbq){
+    !function(f,b,e,v,n,t2,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t2=b.createElement(e);t2.async=!0;t2.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t2,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    window.fbq('init',id);window.fbq('track','PageView');
+  }
+  if(t.headCode&&t.headCode.trim())injectHTML(t.headCode);
+}
+
+/* =====================  DISEÑO  ===================== */
+const fontsLoaded=new Set();
+function loadFont(name){
+  if(!FQ[name]||fontsLoaded.has(name))return;
+  fontsLoaded.add(name);
+  document.head.appendChild(h('link',{rel:'stylesheet',href:'https://fonts.googleapis.com/css2?family='+FQ[name]+'&display=swap'}));
+}
+function applyDesign(){
+  const d=cfg.design,r=document.documentElement.style;
+  ['bg','bg2','card','text','accent','accentText','price','badge'].forEach(k=>r.setProperty('--'+k,d[k]));
+  r.setProperty('--bgfull',d.gradient?`linear-gradient(180deg,${d.bg} 0%,${d.bg2} 100%)`:d.bg);
+  r.setProperty('--hf',`'${d.headingFont}',Impact,sans-serif`);
+  r.setProperty('--bf',`'${d.bodyFont}',system-ui,sans-serif`);
+  r.setProperty('--hw',BOLD_HEADINGS.includes(d.headingFont)?'700':'400');
+  r.setProperty('--r',d.radius+'px');
+  r.fontSize=d.baseSize+'px';
+  loadFont(d.headingFont);loadFont(d.bodyFont);
+  const m=document.querySelector('meta[name=theme-color]');if(m)m.content=d.bg;
+}
+
+/* =====================  RENDER DE LA PÁGINA  ===================== */
+function imgEl(o,alt,eager){
+  const i=h('img',{src:o.src,alt:alt||'',decoding:'async'});
+  if(o.w&&o.h){i.width=o.w;i.height=o.h}
+  if(!eager)i.loading='lazy';
+  return i;
+}
+function renderTop(){
+  const t=$('#top');t.innerHTML='';
+  const b=cfg.brand||{};
+  if(b.logo&&b.logo.src)t.append(imgEl(b.logo,b.name||'Logo',true));
+  else if(b.name)t.append(h('div',{class:'brand'},b.name));
+}
+let autoT=null;
+function renderHero(){
+  const el=$('#hero');el.innerHTML='';clearInterval(autoT);
+  const c=cfg.hero;
+  el.append(h('h1',{},c.title),c.subtitle?h('p',{},c.subtitle):null);
+  const slides=(c.slides||[]).filter(s=>s&&s.src);
+  if(slides.length){
+    const tr=h('div',{class:'track'});
+    slides.forEach((s,i)=>tr.append(h('div',{class:'slide'},imgEl(s,'Promoción de Halloween '+(i+1),i===0))));
+    const sl=h('div',{class:'slider'},tr);
+    let dots=[];
+    if(slides.length>1){
+      const dw=h('div',{class:'dots'});
+      dots=slides.map((_,i)=>h('i',{class:'dot'+(i?'':' on')}));
+      dw.append(...dots);sl.append(dw);
+    }
+    el.append(sl);
+    if(slides.length>1){
+      let idx=0;
+      const kids=[...tr.children];
+      const fit=()=>{const k=kids[idx];if(k)sl.style.height=k.getBoundingClientRect().height+'px'};
+      tr.addEventListener('scroll',()=>{
+        const i=Math.round(tr.scrollLeft/(tr.clientWidth||1));
+        if(i!==idx&&kids[i]){idx=i;dots.forEach((d,j)=>d.classList.toggle('on',j===idx));fit()}
+      },{passive:true});
+      kids.forEach(k=>k.querySelector('img').addEventListener('load',fit));
+      window.onresize=fit;fit();
+      if(c.autoplay){
+        let paused=false;
+        tr.addEventListener('touchstart',()=>paused=true,{passive:true});
+        tr.addEventListener('touchend',()=>setTimeout(()=>paused=false,5000),{passive:true});
+        autoT=setInterval(()=>{if(paused||document.hidden)return;tr.scrollTo({left:((idx+1)%kids.length)*tr.clientWidth,behavior:'smooth'})},4500);
+      }
+    }
+  }
+  if(c.button)el.append(h('div',{class:'cta'},h('a',{class:'btn',href:'#promos'},c.button)));
+}
+function renderProducts(){
+  $('#promos').textContent=cfg.sectionTitle;
+  const box=$('#list');box.innerHTML='';
+  cfg.products.filter(p=>p.visible!==false).forEach(p=>{
+    const inc=String(p.includes||'').split('\n').map(s=>s.trim()).filter(Boolean);
+    const save=(+p.oldPrice>+p.price)?(+p.oldPrice-+p.price):0;
+    const card=h('article',{class:'card',id:'c-'+p.id},
+      h('div',{class:'imgw'},p.image&&p.image.src?imgEl(p.image,p.title):null,p.badge?h('span',{class:'badge'},p.badge):null),
+      h('div',{class:'cbody'},
+        h('h3',{},p.title),
+        p.desc?h('p',{class:'desc'},p.desc):null,
+        inc.length?h('ul',{class:'inc'},inc.map(t=>h('li',{},t))):null,
+        h('div',{class:'pbox'},
+          save?h('span',{class:'old'},fmt(p.oldPrice)):null,
+          h('span',{class:'price'},fmt(p.price)),
+          save?h('span',{class:'save'},'Ahorras '+fmt(save)):null),
+        h('button',{class:'btn block',type:'button'},cfg.ui.cardBtn)));
+    card.querySelector('button').addEventListener('click',()=>openOrder(p.id));
+    box.append(card);
+  });
+}
+function renderFooter(){
+  const f=$('#foot');f.innerHTML='';
+  if(cfg.footer.text)f.append(h('p',{class:'ft'},cfg.footer.text));
+  if(cfg.footer.legal)f.append(h('p',{class:'lg'},cfg.footer.legal));
+}
+function waNumber(){let n=String(cfg.whatsapp||'').replace(/\D/g,'');if(n.length===10)n='57'+n;return n}
+function renderFloat(){
+  const a=$('#waF');
+  a.href='https://wa.me/'+waNumber()+'?text='+encodeURIComponent(cfg.form.floatMsg||'');
+  a.target='_blank';
+}
+function renderAll(){
+  document.title=cfg.pageTitle||'Promos';
+  applyDesign();renderTop();renderHero();renderProducts();renderFooter();renderFloat();
+}
+
+/* =====================  FORMULARIO / PEDIDO  ===================== */
+function openOrder(id){
+  const p=cfg.products.find(x=>x.id===id);if(!p)return;
+  S={p,qty:1};
+  const f=cfg.form,b=$('#ovB');b.innerHTML='';
+  const tot=h('span',{class:'tot'},fmt(p.price));
+  const out=h('output',{},'1');
+  const upd=()=>{out.textContent=S.qty;tot.textContent=fmt(+p.price*S.qty)};
+  b.append(h('h2',{id:'ovT'},f.title),h('p',{class:'intro'},f.intro));
+  b.append(h('div',{class:'sum'},p.image&&p.image.src?h('img',{src:p.image.src,alt:''}):null,h('div',{},h('b',{},p.title),h('span',{},fmt(p.price)))));
+  if(f.qty){
+    const minus=h('button',{type:'button','aria-label':'Menos'},'−'),plus=h('button',{type:'button','aria-label':'Más'},'+');
+    minus.onclick=()=>{S.qty=Math.max(1,S.qty-1);upd()};
+    plus.onclick=()=>{S.qty=Math.min(20,S.qty+1);upd()};
+    b.append(h('div',{class:'qty'},h('div',{class:'st'},minus,out,plus),tot));
+  }else b.append(h('div',{class:'qty'},h('span',{},'Total'),tot));
+  const form=h('form',{novalidate:true});
+  const els={},errs={};
+  const fld=(key,label,o={})=>{
+    const inp=o.area?h('textarea',{rows:2}):h('input',{type:o.type||'text'});
+    inp.name=key;if(o.ac)inp.autocomplete=o.ac;if(o.im)inp.inputMode=o.im;
+    const er=h('div',{class:'er'});
+    els[key]=inp;errs[key]=er;
+    form.append(h('label',{class:'fl'},h('span',{},label+(o.req?' *':'')),inp,er));
+  };
+  fld('name','Nombre completo',{req:1,ac:'name'});
+  if(f.fields.phone)fld('phone','Celular / WhatsApp',{req:1,type:'tel',ac:'tel',im:'tel'});
+  if(f.fields.city)fld('city','Ciudad',{req:1,ac:'address-level2'});
+  if(f.fields.address)fld('address','Dirección de entrega',{req:1,ac:'street-address'});
+  if(f.fields.notes)fld('notes','Observaciones (opcional)',{area:1});
+  const submit=h('button',{class:'btn block',type:'submit'},f.submit);
+  const fb=h('p',{class:'fb'});
+  form.append(submit,fb);
+  form.addEventListener('submit',e=>{
+    e.preventDefault();
+    const v={};let ok=true,first=null;
+    for(const k in els){
+      const val=els[k].value.trim();let m='';
+      if(k!=='notes'&&!val)m='Este campo es obligatorio';
+      else if(k==='name'&&val.length<3)m='Escribe tu nombre completo';
+      else if(k==='phone'&&!/^\+?\d[\d\s-]{6,15}$/.test(val))m='Escribe un número válido';
+      errs[k].textContent=m;
+      if(m){ok=false;if(!first)first=els[k]}
+      v[k]=val;
+    }
+    if(!ok){first.focus();return}
+    const total=+p.price*S.qty;
+    const L=['🎃 Combo: '+p.title,'🔢 Cantidad: '+S.qty,'💰 Total: '+fmt(total),'','👤 Nombre: '+v.name];
+    if(v.phone)L.push('📱 Celular: '+v.phone);
+    if(v.city)L.push('📍 Ciudad: '+v.city);
+    if(v.address)L.push('🏠 Dirección: '+v.address);
+    if(v.notes)L.push('📝 Notas: '+v.notes);
+    const url='https://wa.me/'+waNumber()+'?text='+encodeURIComponent(f.greeting+'\n\n'+L.join('\n'));
+    track('Lead',{content_name:p.title,content_ids:[p.id],value:total,currency:'COP',num_items:S.qty});
+    submit.disabled=true;submit.textContent='Abriendo WhatsApp…';
+    fb.innerHTML='';fb.append('¿No se abrió? ',h('a',{href:url,target:'_blank',rel:'noopener'},'Toca aquí para continuar'));
+    setTimeout(()=>{location.href=url;setTimeout(()=>{submit.disabled=false;submit.textContent=f.submit},2500)},350);
+  });
+  b.append(form);
+  $('#ov').classList.add('open');document.body.classList.add('lock');
+  track('InitiateCheckout',{content_name:p.title,content_ids:[p.id],value:+p.price,currency:'COP'});
+  setTimeout(()=>els.name.focus({preventScroll:true}),300);
+}
+function closeOrder(){$('#ov').classList.remove('open');document.body.classList.remove('lock')}
+$('#ovX').onclick=closeOrder;
+$('#ov').addEventListener('click',e=>{if(e.target.id==='ov')closeOrder()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeOrder()});
+$('#waF').addEventListener('click',()=>track('Contact'));
+
+/* =====================  EDITOR (solo con #admin)  ===================== */
+let saveT,tab='General',openProd=null;
+function status(msg,bad){const s=$('#admSt');if(!s)return;s.textContent=msg;s.className='st'+(bad?' bad':'')}
+function save(){
+  try{localStorage.setItem(KEY,JSON.stringify(cfg));localStorage.setItem(KEY+'_dirty','1');status('✓ Borrador guardado en este navegador (aún no publicado: ve a la pestaña Publicar)')}
+  catch(e){status('⚠ Memoria del navegador llena. Descarga el config.json desde Publicar.',true)}
+}
+function changed(path){
+  const sec=path.split('.')[0];
+  if(sec==='design')applyDesign();
+  else if(sec==='hero')renderHero();
+  else if(sec==='brand')renderTop();
+  else if(sec==='footer')renderFooter();
+  else if(sec==='products'||sec==='sectionTitle'||sec==='ui')renderProducts();
+  else if(sec==='pageTitle')document.title=cfg.pageTitle;
+  else if(sec==='whatsapp'||path==='form.floatMsg')renderFloat();
+  clearTimeout(saveT);saveT=setTimeout(save,300);
+}
+const U={
+  text(label,path,o={}){
+    const inp=o.area?h('textarea',{rows:o.rows||3}):h('input',{type:o.type||'text',placeholder:o.ph||'',inputmode:o.inputmode||null});
+    inp.value=getP(cfg,path)??'';
+    inp.addEventListener('input',()=>{let v=inp.value;if(o.num)v=+v||0;setP(cfg,path,v);changed(path)});
+    return h('label',{class:'f'},h('span',{},label),inp,o.hint?h('small',{},o.hint):null);
+  },
+  check(label,path){
+    const i=h('input',{type:'checkbox'});i.checked=!!getP(cfg,path);
+    i.addEventListener('change',()=>{setP(cfg,path,i.checked);changed(path)});
+    return h('label',{class:'c'},i,h('span',{},label));
+  },
+  color(label,path){
+    const i=h('input',{type:'color'});i.value=getP(cfg,path);const code=h('code',{},i.value);
+    i.addEventListener('input',()=>{setP(cfg,path,i.value);code.textContent=i.value;changed(path)});
+    return h('div',{class:'col'},i,h('span',{},label),code);
+  },
+  select(label,path,opts){
+    const s=h('select');opts.forEach(o=>s.append(h('option',{value:o},o)));s.value=getP(cfg,path);
+    s.addEventListener('change',()=>{setP(cfg,path,s.value);changed(path)});
+    return h('label',{class:'f'},h('span',{},label),s);
+  },
+  range(label,path,min,max,step,unit){
+    const r=h('input',{type:'range',min,max,step});r.value=getP(cfg,path);
+    const val=h('code',{},r.value+unit);
+    r.addEventListener('input',()=>{setP(cfg,path,+r.value);val.textContent=r.value+unit;changed(path)});
+    return h('label',{class:'f'},h('span',{},label+' '),val,r);
+  },
+  image(label,path,o={}){
+    const cur=()=>getP(cfg,path)||{};
+    const prev=h('img',{alt:''}),info=h('small',{}),dl=h('a',{class:'btnx',style:'display:none;text-decoration:none'},'⬇ Descargar imagen comprimida');
+    const url=h('input',{type:'text',placeholder:'o escribe una ruta/URL: img/mi-foto.webp'});
+    const file=h('input',{type:'file',accept:'image/*'});
+    const show=()=>{
+      const c=cur(),src=c.src||'';
+      prev.style.display=src?'block':'none';prev.src=src;
+      url.value=src.startsWith('data:')?'':src;
+      if(src.startsWith('data:')){dl.style.display='inline-block';dl.href=src;dl.download=(label.replace(/\W+/g,'-').toLowerCase()||'imagen')+'.webp'}else dl.style.display='none';
+    };
+    file.addEventListener('change',async()=>{
+      const f=file.files[0];if(!f)return;
+      info.textContent='Comprimiendo…';
+      try{
+        const r=await compress(f,o.max||900);
+        setP(cfg,path,{src:r.dataUrl,w:r.w,h:r.h});
+        info.textContent='Comprimida: '+kb(f.size)+' → '+kb(r.bytes)+' ('+r.w+'×'+r.h+')';
+        show();changed(path);
+      }catch(e){info.textContent='No pude leer esa imagen.'}
+    });
+    url.addEventListener('input',()=>{if(!url.value.trim())return;setP(cfg,path,{src:url.value.trim(),w:0,h:0});prev.src=url.value.trim();prev.style.display='block';changed(path)});
+    show();
+    return h('div',{class:'imgf'},h('b',{},label),prev,file,info,url,dl);
+  }
+};
+function rebuildTab(){showTab(tab)}
+function tabGeneral(){
+  const w=h('div');
+  if(cfg.whatsapp===DEFAULTS.whatsapp)w.append(h('div',{class:'warn'},'⚠ Falta poner tu número de WhatsApp (primer campo).'));
+  w.append(
+    U.text('Número de WhatsApp que recibe los pedidos','whatsapp',{type:'tel',inputmode:'tel',ph:'573001234567',hint:'Con indicativo de país y solo números. Si escribes 10 dígitos le agrego el 57 (Colombia).'}),
+    U.text('Título de la pestaña del navegador','pageTitle'),
+    h('h4',{},'Encabezado'),
+    U.text('Nombre de tu marca (opcional)','brand.name'),
+    U.image('Logo (opcional)','brand.logo',{max:400}),
+    U.text('Título principal','hero.title'),
+    U.text('Subtítulo','hero.subtitle',{area:1,rows:2}),
+    U.text('Texto del botón de arriba (vacío = sin botón)','hero.button'),
+    U.check('Cambiar las imágenes del banner automáticamente','hero.autoplay'),
+    h('h4',{},'Banner (imágenes sin precio)')
+  );
+  (cfg.hero.slides||[]).forEach((s,i)=>{
+    const box=U.image('Imagen '+(i+1),'hero.slides.'+i);
+    const del=h('button',{class:'btnx dan',type:'button'},'Quitar');
+    del.onclick=()=>{cfg.hero.slides.splice(i,1);changed('hero');rebuildTab()};
+    box.append(del);w.append(box);
+  });
+  const add=h('button',{class:'btnx',type:'button'},'+ Agregar imagen al banner');
+  add.onclick=()=>{cfg.hero.slides.push({src:'',w:0,h:0});rebuildTab()};
+  w.append(add,
+    h('h4',{},'Lista de combos'),
+    U.text('Título de la sección','sectionTitle'),
+    U.text('Texto del botón de cada combo','ui.cardBtn'),
+    h('h4',{},'Pie de página y botón flotante'),
+    U.text('Texto del pie','footer.text',{area:1,rows:2}),
+    U.text('Aviso legal','footer.legal',{area:1,rows:3}),
+    U.text('Mensaje del botón flotante de WhatsApp','form.floatMsg',{area:1,rows:2})
+  );
+  return w;
+}
+function tabCombos(){
+  const w=h('div');
+  w.append(h('div',{class:'note'},'Los precios y textos de abajo son los que ve el cliente en la tarjeta y en el pedido. Si el precio también está dibujado dentro de la imagen, cámbiala por una sin precio (o con el precio nuevo).'));
+  cfg.products.forEach((p,i)=>{
+    const d=h('details',{},h('summary',{},(p.visible===false?'🚫 ':'')+(p.title||'Combo')+' · '+fmt(p.price)));
+    if(p.id===openProd)d.open=true;
+    d.addEventListener('toggle',()=>{if(d.open)openProd=p.id});
+    const base='products.'+i+'.';
+    const body=h('div');
+    body.append(
+      U.check('Mostrar este combo en la página',base+'visible'),
+      U.text('Nombre del combo',base+'title'),
+      U.text('Etiqueta sobre la imagen (opcional)',base+'badge'),
+      U.text('Descripción corta',base+'desc',{area:1,rows:2}),
+      U.text('Qué incluye (una línea por producto)',base+'includes',{area:1,rows:4}),
+      U.text('Precio de oferta (COP, solo números)',base+'price',{type:'number',num:1,inputmode:'numeric'}),
+      U.text('Precio anterior / valor real (0 = no mostrar)',base+'oldPrice',{type:'number',num:1,inputmode:'numeric'}),
+      U.image('Imagen del combo','products.'+i+'.image')
+    );
+    const mv=(dir)=>{const j=i+dir;if(j<0||j>=cfg.products.length)return;[cfg.products[i],cfg.products[j]]=[cfg.products[j],cfg.products[i]];openProd=p.id;changed('products');rebuildTab()};
+    const up=h('button',{class:'btnx',type:'button'},'↑ Subir'),dn=h('button',{class:'btnx',type:'button'},'↓ Bajar');
+    const dup=h('button',{class:'btnx',type:'button'},'Duplicar'),del=h('button',{class:'btnx dan',type:'button'},'Eliminar');
+    up.onclick=()=>mv(-1);dn.onclick=()=>mv(1);
+    dup.onclick=()=>{const c=clone(p);c.id='p'+Date.now().toString(36);c.title+=' (copia)';cfg.products.splice(i+1,0,c);openProd=c.id;changed('products');rebuildTab()};
+    del.onclick=()=>{if(confirm('¿Eliminar "'+p.title+'"?')){cfg.products.splice(i,1);changed('products');rebuildTab()}};
+    body.append(up,dn,dup,del);d.append(body);w.append(d);
+  });
+  const add=h('button',{class:'btnx pri',type:'button'},'+ Agregar combo');
+  add.onclick=()=>{const id='p'+Date.now().toString(36);cfg.products.push({id,visible:true,title:'Nuevo combo',badge:'',desc:'',includes:'',price:0,oldPrice:0,image:{src:'',w:0,h:0}});openProd=id;changed('products');rebuildTab()};
+  w.append(add);
+  return w;
+}
+function tabDesign(){
+  const w=h('div');
+  w.append(h('h4',{},'Temas rápidos'));
+  Object.keys(PRESETS).forEach(n=>{
+    const b=h('button',{class:'btnx',type:'button'},n);
+    b.onclick=()=>{Object.assign(cfg.design,PRESETS[n]);changed('design.x');rebuildTab()};
+    w.append(b);
+  });
+  w.append(h('h4',{},'Colores'),
+    U.color('Fondo','design.bg'),U.check('Fondo con degradado','design.gradient'),U.color('Fondo (segundo color del degradado)','design.bg2'),
+    U.color('Tarjetas y formulario','design.card'),U.color('Texto','design.text'),
+    U.color('Botones','design.accent'),U.color('Texto de los botones','design.accentText'),
+    U.color('Precio','design.price'),U.color('Etiquetas (badge)','design.badge'),
+    h('h4',{},'Letras y formas'),
+    U.select('Fuente de títulos y precios','design.headingFont',FONTS.heading),
+    U.select('Fuente de textos','design.bodyFont',FONTS.body),
+    U.range('Tamaño general del texto','design.baseSize',14,20,1,'px'),
+    U.range('Redondeo de bordes','design.radius',0,32,1,'px'));
+  return w;
+}
+function tabForm(){
+  return h('div',{},
+    U.text('Título del formulario','form.title'),
+    U.text('Texto de ayuda','form.intro',{area:1,rows:2}),
+    U.text('Texto del botón de enviar','form.submit'),
+    U.text('Saludo con el que empieza el mensaje de WhatsApp','form.greeting',{area:1,rows:2}),
+    h('h4',{},'Campos (el nombre siempre se pide)'),
+    U.check('Pedir celular','form.fields.phone'),
+    U.check('Pedir ciudad','form.fields.city'),
+    U.check('Pedir dirección','form.fields.address'),
+    U.check('Pedir observaciones','form.fields.notes'),
+    U.check('Permitir elegir la cantidad','form.qty'),
+    h('div',{class:'note'},'Para probar, cierra el editor, toca un combo y llena el formulario: debe abrir WhatsApp con el mensaje armado.'));
+}
+function tabPixel(){
+  return h('div',{},
+    h('div',{class:'note'},'El Pixel no se activa mientras estás en modo editor, para no ensuciar tus estadísticas. Se activa para los visitantes cuando publiques el config.json. Usa una sola opción:'),
+    U.text('Opción 1 · ID del Pixel (solo números)','tracking.pixelId',{inputmode:'numeric',ph:'123456789012345',hint:'Eventos: PageView, InitiateCheckout (abre formulario), Lead (envía pedido) y Contact (botón flotante).'}),
+    U.text('Opción 2 · Código completo para el <head>','tracking.headCode',{area:1,rows:8,hint:'Pega aquí el código que te da Meta u otro script de seguimiento (TikTok, Google, etc.). También puedes pegarlo directamente en index.html donde dice PEGA_TU_PIXEL_AQUI.'}));
+}
+function tabPublish(){
+  const w=h('div');
+  const g=ghLoad();
+  const gh=h('div',{class:'imgf'},h('b',{},'Publicar en GitHub (desde cualquier dispositivo)'));
+  const f1=h('input',{type:'text',placeholder:'usuario/repositorio'});f1.value=g.repo||'';
+  const f2=h('input',{type:'text',placeholder:'rama (main)'});f2.value=g.branch;
+  const f3=h('input',{type:'password',placeholder:'Token de GitHub (github_pat_…)',autocomplete:'off'});f3.value=g.token||'';
+  const pub=h('button',{class:'btnx pri',type:'button'},'🚀 Publicar cambios ahora');
+  pub.onclick=()=>publishGitHub({repo:f1.value.trim(),branch:f2.value.trim()||'main',token:f3.value.trim()},pub);
+  gh.append(h('small',{},'Repositorio'),f1,h('small',{},'Rama'),f2,h('small',{},'Token (se guarda solo en este dispositivo)'),f3,pub,
+    h('small',{},'Sube las imágenes nuevas a la carpeta img/ y actualiza config.json. El token debe ser “fine-grained”, solo para este repositorio, con permiso Contents: Read and write.'));
+  w.append(gh);
+  const size=new Blob([JSON.stringify(cfg)]).size;
+  const embedded=[];
+  const scan=(o,label)=>{if(o&&o.src&&o.src.startsWith('data:'))embedded.push({label,src:o.src})};
+  scan(cfg.brand.logo,'logo');cfg.hero.slides.forEach((s,i)=>scan(s,'banner-'+(i+1)));cfg.products.forEach(p=>scan(p.image,p.id));
+  w.append(
+    h('div',{class:'note'},h('b',{},'Sin token (manual)'),h('ol',{},
+      h('li',{},'Toca “Descargar config.json”.'),
+      h('li',{},'Súbelo al repositorio, junto a index.html (reemplaza el anterior).'))),
+    h('p',{},'Los cambios son un borrador en este navegador hasta que publiques. Tamaño actual: '+kb(size)+(size>1500000?' ⚠ pesado: sube las imágenes como archivos a la carpeta img/ y pon su ruta en cada imagen.':'')+'.')
+  );
+  const dl=h('button',{class:'btnx pri',type:'button'},'⬇ Descargar config.json');
+  dl.onclick=()=>{
+    const a=h('a',{href:URL.createObjectURL(new Blob([JSON.stringify(cfg,null,1)],{type:'application/json'})),download:'config.json'});
+    document.body.append(a);a.click();a.remove();
+  };
+  const imp=h('input',{type:'file',accept:'application/json,.json'});
+  imp.onchange=async()=>{
+    try{const j=JSON.parse(await imp.files[0].text());cfg=merge(clone(DEFAULTS),j);renderAll();changed('x');rebuildTab();status('✓ Configuración importada')}
+    catch(e){status('No pude leer ese archivo',true)}
+  };
+  const reset=h('button',{class:'btnx dan',type:'button'},'↺ Restablecer todo');
+  reset.onclick=()=>{if(confirm('Se borrarán tus cambios locales y volverá la versión original.')){try{localStorage.removeItem(KEY);localStorage.removeItem(KEY+'_dirty')}catch(e){}cfg=clone(DEFAULTS);renderAll();rebuildTab();status('Restablecido')}};
+  const exit=h('button',{class:'btnx',type:'button'},'Salir del modo editor');
+  exit.onclick=()=>{try{sessionStorage.removeItem('lp_adm')}catch(e){}location.hash='';location.search='';location.reload()};
+  w.append(dl,h('h4',{},'Importar'),imp,h('h4',{},'Otras acciones'),reset,exit);
+  if(embedded.length){
+    w.append(h('h4',{},'Imágenes subidas desde el editor'),h('p',{},'Ya van comprimidas. Si prefieres alojarlas como archivos, descárgalas, súbelas a img/ y pon la ruta en cada imagen.'));
+    embedded.forEach(e=>w.append(h('a',{class:'btnx',style:'text-decoration:none;display:inline-block',href:e.src,download:e.label+'.webp'},'⬇ '+e.label+' · '+kb(e.src.length*.75))));
+  }
+  return w;
+}
+/* ---------- Publicar en GitHub (config.json + imágenes) ---------- */
+const GHK='lp_gh';
+function ghLoad(){
+  let g={};try{g=JSON.parse(localStorage.getItem(GHK)||'{}')}catch(e){}
+  if(!g.repo&&/\.github\.io$/.test(location.hostname)){
+    const o=location.hostname.replace('.github.io','');
+    const r=location.pathname.split('/').filter(Boolean)[0];
+    g.repo=o+'/'+(r&&!/\.html?$/.test(r)?r:o+'.github.io');
+  }
+  g.branch=g.branch||'main';return g;
+}
+const b64=str=>btoa(unescape(encodeURIComponent(str)));
+async function ghPut(g,path,contentB64,msg){
+  const api='https://api.github.com/repos/'+g.repo+'/contents/'+path.split('/').map(encodeURIComponent).join('/');
+  const H={Authorization:'Bearer '+g.token,Accept:'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'};
+  let sha;
+  const r0=await fetch(api+'?ref='+encodeURIComponent(g.branch)+'&t='+Date.now(),{headers:H});
+  if(r0.ok)sha=(await r0.json()).sha;
+  else if(r0.status!==404)throw new Error(r0.status===401?'Token no válido o vencido':r0.status===403?'El token no tiene permiso (Contents: Read and write)':'GitHub respondió '+r0.status+' (revisa repositorio y rama)');
+  const r=await fetch(api,{method:'PUT',headers:{...H,'Content-Type':'application/json'},body:JSON.stringify({message:msg,content:contentB64,branch:g.branch,...(sha?{sha}:{})})});
+  if(!r.ok){const t=await r.json().catch(()=>({}));throw new Error(t.message||('GitHub respondió '+r.status))}
+}
+async function publishGitHub(g,btn){
+  if(!/^[\w.-]+\/[\w.-]+$/.test(g.repo||''))return status('Escribe el repositorio como usuario/repositorio',true);
+  if(!g.token)return status('Falta el token de GitHub',true);
+  btn.disabled=true;
+  try{
+    localStorage.setItem(GHK,JSON.stringify(g));
+    const imgs=[];
+    const scan=(o,l)=>{if(o&&o.src&&o.src.startsWith('data:'))imgs.push({o,l})};
+    scan(cfg.brand.logo,'logo');cfg.hero.slides.forEach((x,i)=>scan(x,'banner-'+(i+1)));cfg.products.forEach(x=>scan(x.image,x.id));
+    let n=0;
+    for(const it of imgs){
+      n++;status('Subiendo imagen '+n+' de '+imgs.length+'…');
+      const m=/^data:image\/(\w+);base64,(.*)$/.exec(it.o.src);if(!m)continue;
+      const path='img/'+it.l.replace(/[^\w-]+/g,'-').toLowerCase()+'-'+Date.now().toString(36)+'.'+(m[1]==='jpeg'?'jpg':m[1]);
+      await ghPut(g,path,m[2],'Editor: imagen '+it.l);
+      it.o.src=path;
+    }
+    status('Subiendo configuración…');
+    await ghPut(g,'config.json',b64(JSON.stringify(cfg,null,1)),'Editor: actualizar landing');
+    try{localStorage.setItem(KEY,JSON.stringify(cfg));localStorage.removeItem(KEY+'_dirty')}catch(e){}
+    status('✓ Publicado. GitHub Pages tarda 1–2 minutos en mostrarlo a todos.');
+    rebuildTab();
+  }catch(e){status('⚠ '+e.message,true);btn.disabled=false}
+}
+const TABS={General:tabGeneral,Combos:tabCombos,'Diseño':tabDesign,Formulario:tabForm,Pixel:tabPixel,Publicar:tabPublish};
+function showTab(t){
+  tab=t;
+  document.querySelectorAll('#admTabs button').forEach(b=>b.classList.toggle('on',b.textContent===t));
+  const bd=$('#admBd'),top=bd.scrollTop;bd.innerHTML='';bd.append(TABS[t]());bd.scrollTop=top;
+}
+function buildAdmin(){
+  const root=$('#admRoot');
+  const gear=h('button',{class:'gear',type:'button'},'⚙ Editor');
+  const panel=h('div',{class:'adm',id:'adm'});
+  const close=h('button',{type:'button'},'👁 Ver página');
+  panel.append(h('div',{class:'hd'},h('b',{},'Editor de la landing'),close),
+    h('div',{class:'tabs',id:'admTabs'},Object.keys(TABS).map(t=>{const b=h('button',{type:'button'},t);b.onclick=()=>showTab(t);return b})),
+    h('div',{class:'bd',id:'admBd'}),
+    h('div',{class:'st',id:'admSt'},'Los cambios se ven al instante y se guardan en este navegador.'));
+  root.append(gear,panel);
+  gear.onclick=()=>{panel.classList.add('open');gear.style.display='none'};
+  close.onclick=()=>{panel.classList.remove('open');gear.style.display=''};
+  showTab('General');
+  if(wantAdmin){panel.classList.add('open');gear.style.display='none'}
+}
+
+/* =====================  ARRANQUE  ===================== */
+(async()=>{
+  await loadConfig();
+  renderAll();
+  initTracking();
+  if(ADMIN)buildAdmin();
+})();
+})();
+</script>
+</body>
+</html>
